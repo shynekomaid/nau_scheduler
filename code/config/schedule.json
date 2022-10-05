@@ -1,0 +1,346 @@
+{
+  "pairs": {
+    "1": {
+      "start": "08:00",
+      "end": "09:35"
+    },
+    "2": {
+      "start": "09:50",
+      "end": "11:25"
+    },
+    "3": {
+      "start": "11:40",
+      "end": "13:15"
+    },
+    "4": {
+      "start": "13:30",
+      "end": "15:05"
+    },
+    "5": {
+      "start": "15:20",
+      "end": "16:55"
+    },
+    "6": {
+      "start": "17:10",
+      "end": "18:45"
+    },
+    "7": {
+      "start": "19:00",
+      "end": "20:35"
+    },
+    "8": {
+      "start": "20:50",
+      "end": "22:25"
+    }
+  },
+  "weeks": {
+    "1": {
+      "days": {
+        "1": {
+          "pairs": {
+            "2": {
+              "teacher": 1,
+              "subject": 1,
+              "type": "lecture",
+              "room": "ФК"
+            },
+            "3": {
+              "teacher": 2,
+              "subject": 2,
+              "type": "lecture",
+              "room": "3.319"
+            },
+            "4": {
+              "teacher": 2,
+              "subject": 2,
+              "type": "practice",
+              "room": "3.319"
+            }
+          }
+        },
+        "2": {
+          "pairs": {
+            "2": {
+              "teacher": 1,
+              "subject": 1,
+              "type": "lecture",
+              "room": "ФК"
+            },
+            "3": {
+              "teacher": 3,
+              "subject": 3,
+              "type": "lecture",
+              "room": "ФК"
+            },
+            "4": {
+              "teacher": 3,
+              "subject": 3,
+              "type": "lecture",
+              "room": "ФК"
+            },
+            "5": {
+              "teacher": 4,
+              "subject": 4,
+              "type": "practice",
+              "room": "3.112"
+            }
+          }
+        },
+        "3": {
+          "pairs": {
+            "2": {
+              "teacher": 5,
+              "subject": 5,
+              "type": "lecture",
+              "room": "ФК"
+            },
+            "3": {
+              "teacher": 5,
+              "subject": 5,
+              "type": "lecture",
+              "room": "ФК"
+            },
+            "4": {
+              "teacher": 4,
+              "subject": 4,
+              "type": "practice",
+              "room": "ФК"
+            }
+          }
+        },
+        "4": {
+          "pairs": {
+            "3": {
+              "teacher": 2,
+              "subject": 6,
+              "type": "lecture",
+              "room": "ФК"
+            },
+            "4": {
+              "teacher": 2,
+              "subject": 6,
+              "type": "practice",
+              "room": "ФК"
+            },
+            "5": {
+              "teacher": 6,
+              "subject": 7,
+              "type": "lecture",
+              "room": "3.330"
+            },
+            "6": {
+              "teacher": 6,
+              "subject": 7,
+              "type": "lecture",
+              "room": "3.330"
+            }
+          }
+        },
+        "5": {
+          "pairs": {
+            "2": {
+              "teacher": 7,
+              "subject": 8,
+              "type": "laboratory",
+              "room": "3.319"
+            },
+            "3": {
+              "teacher": 7,
+              "subject": 8,
+              "type": "lecture",
+              "room": "3.330"
+            },
+            "4": {
+              "teacher": 7,
+              "subject": 8,
+              "type": "laboratory",
+              "room": "3.330"
+            }
+          }
+        }
+      }
+    },
+    "2": {
+      "days": {
+        "1": {
+          "pairs": {
+            "2": {
+              "teacher": 1,
+              "subject": 1,
+              "type": "lecture",
+              "room": "ФК"
+            },
+            "3": {
+              "teacher": 2,
+              "subject": 6,
+              "type": "lecture",
+              "room": "ФК"
+            },
+            "4": {
+              "teacher": 2,
+              "subject": 6,
+              "type": "practice",
+              "room": "ФК"
+            },
+            "5": {
+              "teacher": 6,
+              "subject": 7,
+              "type": "lecture",
+              "room": "3.330"
+            }
+          }
+        },
+        "2": {
+          "pairs": {
+            "2": {
+              "teacher": 3,
+              "subject": 3,
+              "type": "lecture",
+              "room": "ФК"
+            },
+            "3": {
+              "teacher": 3,
+              "subject": 3,
+              "type": "lecture",
+              "room": "ФК"
+            },
+            "4": {
+              "teacher": 4,
+              "subject": 4,
+              "type": "practice",
+              "room": "3.411"
+            }
+          }
+        },
+        "3": {
+          "pairs": {
+            "2": {
+              "teacher": 5,
+              "subject": 5,
+              "type": "lecture",
+              "room": "ФК"
+            },
+            "3": {
+              "teacher": 5,
+              "subject": 5,
+              "type": "lecture",
+              "room": "ФК"
+            },
+            "4": {
+              "teacher": 4,
+              "subject": 4,
+              "type": "practice",
+              "room": "3.411"
+            }
+          }
+        },
+        "4": {
+          "pairs": {
+            "4": {
+              "teacher": 2,
+              "subject": 2,
+              "type": "lecture",
+              "room": "3.319"
+            },
+            "5": {
+              "teacher": 2,
+              "subject": 2,
+              "type": "practice",
+              "room": "3.319"
+            },
+            "6": {
+              "teacher": 6,
+              "subject": 7,
+              "type": "lecture",
+              "room": "3.330"
+            }
+          }
+        },
+        "5": {
+          "pairs": {
+            "2": {
+              "teacher": 7,
+              "subject": 8,
+              "type": "laboratory",
+              "room": "3.319"
+            },
+            "3": {
+              "teacher": 7,
+              "subject": 8,
+              "type": "lecture",
+              "room": "3.330"
+            },
+             "4": {
+              "teacher": 1,
+              "subject": 1,
+              "type": "lecture",
+              "room": "ФК"
+            },
+             "5": {
+              "teacher": 7,
+              "subject": 8,
+              "type": "laboratory",
+              "room": "3.330"
+            }
+          }
+        }
+      }
+    }
+  },
+  "teachers": {
+    "1": {
+      "name": "Мірошниченко С.І.",
+      "degree": "professor"
+    },
+    "2": {
+      "name": "Мельник О.С.",
+      "degree": "docent"
+    },
+    "3": {
+      "name": "Мірошниченко О.С.",
+      "degree": "docent"
+    },
+    "4": {
+      "name": "Дротянко Л.Г.",
+      "degree": "head_of_department"
+    },
+    "5": {
+      "name": "Морозова І.В.",
+      "degree": "professor"
+    },
+    "6": {
+      "name": "Пантєєв Р.Л.",
+      "degree": "docent"
+    },
+    "7": {
+      "name": "Шутко В.М.",
+      "degree": "professor"
+    }
+  },
+  "subjects": {
+    "1": {
+      "name": "Променева діагностична-терапевтична техніка"
+    },
+    "2": {
+      "name": "Методологія прикладних досліджень у сфері мікро- та наносистемній техніці"
+    },
+    "3": {
+      "name": "Діагностично-лікувальні комплексм"
+    },
+    "4": {
+      "name": "Філосовські проблеми наукового пізнання"
+    },
+    "5": {
+      "name": "Енергозберігаючі технології"
+    },
+    "6": {
+      "name": "Фізика електронних компонентів та їх моделювання"
+    },
+    "7": {
+      "name": "Технології навігації та позиціонування в приміщенні"
+    },
+    "8": {
+      "name": "Чисельне моделювання систем і процесів"
+    }
+  }
+}

@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.vscode/sftp.json
+code/config/default.py
+code/config/default.json
