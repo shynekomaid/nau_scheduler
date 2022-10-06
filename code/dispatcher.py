@@ -1,7 +1,7 @@
 # This script should be running constantly (from the systemd service or from a while loop in a bash script from crontab)
 
 from asyncio import futures
-from core import log2file, prepare_config, prepare_language, send_to_admin, get_week, check_subscriber, add_subscriber, remove_subscriber, get_logs_files, build_pairs, pretty_pairs, pretty_hours, get_next_pair, pretty_next_pair, get_prev_pair, pretty_prev_pair
+from core import log2file, prepare_config, prepare_language, send_to_admin, get_week, check_subscriber, add_subscriber, remove_subscriber, get_logs_files, build_pairs, pretty_pairs, pretty_hours, get_next_pair, pretty_next_pair, get_prev_pair, pretty_prev_pair, get_now_pair, pretty_now_pair
 
 
 import html
@@ -210,6 +210,11 @@ def prev_pair(update: Update, context: CallbackContext) -> None:
         pretty_prev_pair(pair, when), parse_mode=ParseMode.HTML, disable_web_page_preview=True)
 
 
+def now_pair(update: Update, context: CallbackContext) -> None:
+    update.message.reply_text(
+        pretty_now_pair(get_now_pair()), parse_mode=ParseMode.HTML, disable_web_page_preview=True)
+
+
 if __name__ == "__main__":
     log2file("Starting timer script")
     config = prepare_config("config/settings.json")
@@ -244,7 +249,7 @@ if __name__ == "__main__":
     dispatcher.add_handler(CommandHandler("schedule_of", schedule_of))
     dispatcher.add_handler(CommandHandler("next", next_pair))
     dispatcher.add_handler(CommandHandler("prev", prev_pair))
-
+    dispatcher.add_handler(CommandHandler("now", now_pair))
     dispatcher.add_handler(CommandHandler("support", support))
     dispatcher.add_handler(CommandHandler("hours", hours))
 

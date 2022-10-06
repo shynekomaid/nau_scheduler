@@ -128,5 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# sftp configuration file
 .vscode/sftp.json
+
+# bot settings
 code/config/settings.json

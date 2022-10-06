@@ -28,10 +28,24 @@
 
 Installing Install Python3, pip and virtualenv:
 
+Ubuntu 20.04 and higher:
+
 ```bash
 sudo apt install python3
 sudo apt install python3-pip
 sudo apt install python3-venv
+```
+
+Ububtu 18.04:
+
+```bash
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.7
+sudo apt install python3-pip
+python3.7 -m pip install pip
+sudo apt install python3.7-venv
 ```
 
 #### Clone the repository
@@ -52,10 +66,22 @@ sudo chmod -R 755 /opt/nau-scheduler-bot
 
 #### Prepare virtual environment
 
+Ubuntu 20.04 and higher:
+
 ```bash
 cd /opt/nau-scheduler-bot
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv sched
+source sched/bin/activate
+pip install -r requirements.txt
+```
+
+Ubuntu 18.04:
+
+```bash
+cd /opt/nau-scheduler-bot
+python3.7 -m venv sched
+source sched/bin/activate
+python3.7 -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 

@@ -213,9 +213,9 @@ def pretty_pairs(pairs, its_day_of_week=False, need_print_week=False):
             if pair["teacher"]:
                 pretty += f'<b>{i18n["schedule"]["teacher"]}</b> <i>{i18n["schedule"]["teacher_degrees"][pair["teacher"]["degree"]]}</i> {pair["teacher"]["name"]}\n'
             if pair["class_link"]:
-                pretty += f'<a href="{pair["class_link"]}">{i18n["schedule"]["class_link"]}</a> '
+                pretty += f'[<a href="{pair["class_link"]}">{i18n["schedule"]["class_link"]}</a>] '
             if pair["meet_link"]:
-                pretty += f'<a href="{pair["meet_link"]}">{i18n["schedule"]["meet_link"]}</a>'
+                pretty += f'[<a href="{pair["meet_link"]}">{i18n["schedule"]["meet_link"]}</a>]'
             if (not (pair["class_link"] or pair["meet_link"])):
                 pretty = pretty[:-1]
             pretty += "\n\n"
@@ -292,9 +292,9 @@ def pretty_next_pair(pair, when):
     if pair["teacher"]:
         pretty += f'<b>{i18n["schedule"]["teacher"]}</b> <i>{i18n["schedule"]["teacher_degrees"][pair["teacher"]["degree"]]}</i> {pair["teacher"]["name"]}\n'
     if pair["class_link"]:
-        pretty += f'<a href="{pair["class_link"]}">{i18n["schedule"]["class_link"]}</a> '
+        pretty += f'[<a href="{pair["class_link"]}">{i18n["schedule"]["class_link"]}</a>] '
     if pair["meet_link"]:
-        pretty += f'<a href="{pair["meet_link"]}">{i18n["schedule"]["meet_link"]}</a>'
+        pretty += f'[<a href="{pair["meet_link"]}">{i18n["schedule"]["meet_link"]}</a>]'
     if (not (pair["class_link"] or pair["meet_link"])):
         pretty = pretty[:-1]
     pretty += f'\n\n<b>{i18n["schedule"]["when"]}</b> {when.strftime("%d.%m.%Y")}'
@@ -316,9 +316,9 @@ def pretty_prev_pair(pair, when):
     if pair["teacher"]:
         pretty += f'<b>{i18n["schedule"]["teacher"]}</b> <i>{i18n["schedule"]["teacher_degrees"][pair["teacher"]["degree"]]}</i> {pair["teacher"]["name"]}\n'
     if pair["class_link"]:
-        pretty += f'<a href="{pair["class_link"]}">{i18n["schedule"]["class_link"]}</a> '
+        pretty += f'[<a href="{pair["class_link"]}">{i18n["schedule"]["class_link"]}</a>] '
     if pair["meet_link"]:
-        pretty += f'<a href="{pair["meet_link"]}">{i18n["schedule"]["meet_link"]}</a>'
+        pretty += f'[<a href="{pair["meet_link"]}">{i18n["schedule"]["meet_link"]}</a>]'
     if (not (pair["class_link"] or pair["meet_link"])):
         pretty = pretty[:-1]
     pretty += f'\n\n<b>{i18n["schedule"]["when"]}</b> {when.strftime("%d.%m.%Y")}'
@@ -329,4 +329,43 @@ def pretty_prev_pair(pair, when):
         pretty += f' ({i18n["schedule"]["days"]["yesterday"]})'
     else:
         pretty += f' ({i18n["schedule"]["days"]["prev"][int(when.strftime("%w"))]})'
+    return pretty
+
+
+def get_now_pair():
+    day = date.today()
+    pairs = build_pairs(day)
+    if pairs:
+        for pair in pairs:
+            h1 = int(pair["start"].split(":")[0])
+            m1 = int(pair["start"].split(":")[1])
+            h2 = int(pair["end"].split(":")[0])
+            m2 = int(pair["end"].split(":")[1])
+            t = dt.now().time()
+            h3 = t.hour
+            m3 = t.minute
+            M1 = h1*60 + m1
+            M2 = h2*60 + m2
+            M3 = h3*60 + m3
+            if M1 < M3 < M2:
+                return pair
+    return None
+
+
+def pretty_now_pair(pair):
+    if (not pair):
+        return f'<b>{i18n["schedule"]["empty_now"]}</b>'
+    pretty = f'<b>{i18n["schedule"]["now"]}</b>\n\n'
+    pretty += f'<b>{pair["start"]} - {pair["end"]}</b>  <i>{i18n["schedule"]["pairs_type"][pair["type"]]}</i>\n'
+    pretty += f'<pre>{pair["subject"]["name"]}</pre>\n'
+    pretty += f'<b>{i18n["schedule"]["room"]}</b> {pair["room"]}\n'
+    if pair["teacher"]:
+        pretty += f'<b>{i18n["schedule"]["teacher"]}</b> <i>{i18n["schedule"]["teacher_degrees"][pair["teacher"]["degree"]]}</i> {pair["teacher"]["name"]}\n'
+    if pair["class_link"]:
+        pretty += f'[<a href="{pair["class_link"]}">{i18n["schedule"]["class_link"]}</a>] '
+    if pair["meet_link"]:
+        pretty += f'[<a href="{pair["meet_link"]}">{i18n["schedule"]["meet_link"]}</a>]'
+    if (not (pair["class_link"] or pair["meet_link"])):
+        pretty = pretty[:-1]
+    pretty += f'\n\n{i18n["schedule"]["all_today"]}'
     return pretty
