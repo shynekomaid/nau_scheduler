@@ -1,6 +1,8 @@
 # This script should be running constantly (from the systemd service or from a while loop in a bash script from crontab)
 
 from asyncio import futures
+import signal
+
 from core import log2file, prepare_config, prepare_language, send_to_admin, get_week, check_subscriber, add_subscriber, remove_subscriber, get_logs_files, build_pairs, pretty_pairs, pretty_hours, get_next_pair, pretty_next_pair, get_prev_pair, pretty_prev_pair, get_now_pair, pretty_now_pair
 
 
@@ -215,7 +217,16 @@ def now_pair(update: Update, context: CallbackContext) -> None:
         pretty_now_pair(get_now_pair()), parse_mode=ParseMode.HTML, disable_web_page_preview=True)
 
 
+def deadly_signal_handler(signum, frame):
+    log2file("Received signal: " + str(signum), "info")
+    send_to_admin(i18n["system_messages"]["bot_stopped"])
+    exit(0)
+
+
 if __name__ == "__main__":
+    catchable_sigs = set(signal.Signals) - {signal.SIGKILL, signal.SIGSTOP}
+    for sig in catchable_sigs:
+        signal.signal(sig, deadly_signal_handler)
     log2file("Starting timer script")
     config = prepare_config("config/settings.json")
     i18n = prepare_language(config["language"])
