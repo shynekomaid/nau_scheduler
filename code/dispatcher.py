@@ -223,6 +223,11 @@ def deadly_signal_handler(signum, frame):
     exit(0)
 
 
+def help_bot(update: Update, context: CallbackContext) -> None:
+    update.message.reply_text(i18n["system_messages"]["help"].format(
+        support=config["support"]))
+
+
 if __name__ == "__main__":
     catchable_sigs = set(signal.Signals) - {signal.SIGKILL, signal.SIGSTOP}
     for sig in catchable_sigs:
@@ -263,6 +268,7 @@ if __name__ == "__main__":
     dispatcher.add_handler(CommandHandler("now", now_pair))
     dispatcher.add_handler(CommandHandler("support", support))
     dispatcher.add_handler(CommandHandler("hours", hours))
+    dispatcher.add_handler(CommandHandler("help", help_bot))
 
     updater.start_polling()
     updater.idle()
