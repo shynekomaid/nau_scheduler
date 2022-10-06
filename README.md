@@ -15,6 +15,8 @@
       - [Config bot in telegram side](#config-bot-in-telegram-side)
       - [Create systemd service](#create-systemd-service)
       - [Start and enable systemd service](#start-and-enable-systemd-service)
+      - [Add commands to botFather](#add-commands-to-botfather)
+  - [License](#license)
 
 ## Install guide
 
@@ -141,4 +143,15 @@ sudo systemctl enable scheduler_dispatcher.service
 
 sudo systemctl start scheduler_timer.timer
 sudo systemctl enable scheduler_timer.timer
+
+sudo systemctl start scheduler_motd.timer
+sudo systemctl enable scheduler_motd.timer
 ```
+
+#### Add commands to botFather
+
+In file `botFatherCmd` you can find commands for botFather. You can add them to your bot using botFather.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

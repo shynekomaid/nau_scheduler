@@ -1,0 +1,25 @@
+/start - start working with the bot
+/week - find out what week (first or second)
+/today - find out the pairs for today
+/tomorrow - find out the pairs for tomorrow
+/yesterday - find out what pairs were yesterday
+/full - get the whole schedule as a picture
+/monday - get the schedule for the coming Monday
+/tuesday - get the schedule for the coming Tuesday
+/wednesday - get the schedule for next Wednesday
+/thursday - get the schedule for the next Thursday
+/friday - get the schedule for the next Friday
+/saturday - get timetable for next Saturday
+/sunday - get the schedule for the next Sunday
+/next - find out what the next pair is
+/prev - to find out which pair was last
+/now - to find out which pair is now
+/support - get support contacts
+/hours - get the call schedule
+/subscribe - subscribe to the schedule to personal messages (do not forget to write to the bot /start)
+/unsubscribe - unsubscribe from the schedule mailing
+/today - show the schedule for today
+/schedule_of 24.05.2022 - show the schedule for the specified date (attention! the year is not checked)
+/help - show description of commands
+/reload_bot - restart the bot (for administrators only)
+/send_logs - send logs (for administrator only)
