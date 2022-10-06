@@ -133,3 +133,5 @@ dmypy.json
 
 # bot settings
 code/config/settings.json
+
+.VSCodeCounter
