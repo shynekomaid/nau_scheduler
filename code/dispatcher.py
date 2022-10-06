@@ -33,6 +33,10 @@ def start(update: Update, context: CallbackContext) -> None:
 
 def subscribe(update: Update, context: CallbackContext) -> None:
     chat_id = update.message.chat_id
+    if update.message.chat.type != "private":
+        update.message.reply_text(
+            i18n["system_messages"]["subscribe_in_private"])
+        return
     if check_subscriber(chat_id):
         update.message.reply_text(
             i18n["system_messages"]["already_subscribed"])
@@ -43,6 +47,9 @@ def subscribe(update: Update, context: CallbackContext) -> None:
 
 def unsubscribe(update: Update, context: CallbackContext) -> None:
     chat_id = update.message.chat_id
+    if update.message.chat.type != "private":
+        update.message.reply_text(
+            i18n["system_messages"]["subscribe_in_private"])
     if check_subscriber(chat_id):
         remove_subscriber(chat_id)
         update.message.reply_text(i18n["system_messages"]["unsubscribed"])
