@@ -11,7 +11,9 @@
       - [Clone the repository](#clone-the-repository)
       - [Prepare virtual environment](#prepare-virtual-environment)
       - [Create config file](#create-config-file)
+      - [Getting your group chat id](#getting-your-group-chat-id)
       - [Config bot in telegram side](#config-bot-in-telegram-side)
+      - [Create systemd service](#create-systemd-service)
 
 ## Install guide
 
@@ -98,8 +100,18 @@ Creating config file from template:
   nano config/settings.json
 ```
 
+#### Getting your group chat id
+
+1. Turn off any bot pooling for token
+2. Add your bot to your group
+3. Send any message to bot (ex: /group_id@tmischedule_bot). Replace @tmischedule_bot with your bot username
+4. Open in browser <https://api.telegram.org/botTOKEN/getUpdates>. (Replace TOKEN with your bot token)
+5. Search for `/group_id` and copy chat id
+
 #### Config bot in telegram side
 
 Send `/start` command to your bot from admin account (admin_id in settings.json). If you don't do this, bot can't send debug messages to you.
 
 Don't forget to add your bot to your group chat. If you don't do this, bot can't send messages to your group chat.
+
+#### Create systemd service
