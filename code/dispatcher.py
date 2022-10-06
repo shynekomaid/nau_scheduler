@@ -96,7 +96,6 @@ def week(update: Update, context: CallbackContext) -> None:
 
 def send_logs(update: Update, context: CallbackContext) -> None:
     if update.message.chat_id == int(config["admin_id"]):
-        # send files
         logs = get_logs_files()
         if not logs:
             update.message.reply_text(i18n["system_messages"]["no_logs"])
@@ -225,14 +224,14 @@ def deadly_signal_handler(signum, frame):
 
 def help_bot(update: Update, context: CallbackContext) -> None:
     update.message.reply_text(i18n["system_messages"]["help"].format(
-        support=config["support"]))
+        support=config["support"]), parse_mode=ParseMode.HTML, disable_web_page_preview=True)
 
 
 if __name__ == "__main__":
     catchable_sigs = set(signal.Signals) - {signal.SIGKILL, signal.SIGSTOP}
     for sig in catchable_sigs:
         signal.signal(sig, deadly_signal_handler)
-    log2file("Starting timer script")
+    log2file("Starting dispatcher script")
     config = prepare_config("config/settings.json")
     i18n = prepare_language(config["language"])
     send_to_admin(i18n["system_messages"]["restarted"])

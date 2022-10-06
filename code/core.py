@@ -2,7 +2,6 @@
 
 from datetime import date, datetime as dt, timedelta as td
 from json import loads, dumps
-from time import time as time_now
 import requests
 from os import path as os_path, listdir as os_listdir
 
@@ -112,10 +111,13 @@ def prepare_language(language):
         return language_dicts
 
 
-def send_telegram_message(message, chat_id):
+def send_telegram_message(message, chat_id, parse_mode="plain"):
     token = conf["token"]
     url = f"https://api.telegram.org/bot{token}/sendMessage"
     data = {"chat_id": chat_id, "text": message}
+    if parse_mode == "html":
+        data["parse_mode"] = "HTML"
+        data["disable_web_page_preview"] = True
     requests.post(url, data=data)
 
 
@@ -123,10 +125,10 @@ def send_to_admin(message):
     send_telegram_message(message, conf["admin_id"])
 
 
-def send_to_subscribers(message):
-    send_telegram_message(message, conf["group_id"])
+def send_to_subscribers(message, parse_mode="html"):
+    send_telegram_message(message, conf["group_id"], parse_mode)
     for subscriber in conf["subscribers"]:
-        send_telegram_message(message, subscriber)
+        send_telegram_message(message, subscriber, parse_mode)
 
 
 def save_config():
@@ -161,6 +163,7 @@ def check_subscriber(chat_id):
 def get_logs_files():
     logs_dir = os_path.join(os_path.dirname(__file__), "logs")
     names = os_listdir(logs_dir)
+    names.remove(".gitkeep")
     if not names:
         return []
     else:
@@ -283,7 +286,7 @@ def get_prev_pair():
     return None, None
 
 
-def pretty_next_pair(pair, when):
+def pretty_next_pair(pair, when, need_when=True):
     if (not pair or not when):
         return f'<b>{i18n["schedule"]["empty_next"]}</b>'
     pretty = f'<b>{pair["start"]} - {pair["end"]}</b>  <i>{i18n["schedule"]["pairs_type"][pair["type"]]}</i>\n'
@@ -297,13 +300,14 @@ def pretty_next_pair(pair, when):
         pretty += f'[<a href="{pair["meet_link"]}">{i18n["schedule"]["meet_link"]}</a>]'
     if (not (pair["class_link"] or pair["meet_link"])):
         pretty = pretty[:-1]
-    pretty += f'\n\n<b>{i18n["schedule"]["when"]}</b> {when.strftime("%d.%m.%Y")}'
-    if when == date.today():
-        pretty += f' ({i18n["schedule"]["days"]["today"]})'
-    elif when == date.today() + td(days=1):
-        pretty += f' ({i18n["schedule"]["days"]["tomorrow"]})'
-    else:
-        pretty += f' ({i18n["schedule"]["days"]["next"][int(when.strftime("%w"))]})'
+    if (need_when):
+        pretty += f'\n\n<b>{i18n["schedule"]["when"]}</b> {when.strftime("%d.%m.%Y")}'
+        if when == date.today():
+            pretty += f' ({i18n["schedule"]["days"]["today"]})'
+        elif when == date.today() + td(days=1):
+            pretty += f' ({i18n["schedule"]["days"]["tomorrow"]})'
+        else:
+            pretty += f' ({i18n["schedule"]["days"]["next"][int(when.strftime("%w"))]})'
     return pretty
 
 
@@ -369,3 +373,11 @@ def pretty_now_pair(pair):
         pretty = pretty[:-1]
     pretty += f'\n\n{i18n["schedule"]["all_today"]}'
     return pretty
+
+
+def convert_timedelta(duration):
+    days, seconds = duration.days, duration.seconds
+    hours = days * 24 + seconds // 3600
+    minutes = (seconds % 3600) // 60
+    seconds = (seconds % 60)
+    return hours, minutes, seconds
