@@ -113,7 +113,7 @@ def support(update: Update, context: CallbackContext) -> None:
 
 
 def today_pairs(update: Update, context: CallbackContext) -> None:
-    message = pretty_pairs(build_pairs())
+    message = pretty_pairs(build_pairs(), False, False, True)
     update.message.reply_text(
         message.format(
             date=i18n["schedule"]["days"]["today"]), parse_mode=ParseMode.HTML, disable_web_page_preview=True)
@@ -121,7 +121,7 @@ def today_pairs(update: Update, context: CallbackContext) -> None:
 
 def tomorrow_pairs(update: Update, context: CallbackContext) -> None:
     message = pretty_pairs(build_pairs(
-        day=dt.date.today() + dt.timedelta(days=1)))
+        day=dt.date.today() + dt.timedelta(days=1)), False, False, True)
     update.message.reply_text(
         message.format(
             date=i18n["schedule"]["days"]["tomorrow"]), parse_mode=ParseMode.HTML, disable_web_page_preview=True)
@@ -129,7 +129,7 @@ def tomorrow_pairs(update: Update, context: CallbackContext) -> None:
 
 def yesterday_pairs(update: Update, context: CallbackContext) -> None:
     message = pretty_pairs(build_pairs(
-        day=dt.date.today() - dt.timedelta(days=1)))
+        day=dt.date.today() - dt.timedelta(days=1)), False, False, True)
     update.message.reply_text(
         message.format(
             date=i18n["schedule"]["days"]["yesterday"]), parse_mode=ParseMode.HTML, disable_web_page_preview=True)
@@ -178,7 +178,7 @@ def get_next_day_schedule(update: Update, context: CallbackContext, day_of_week)
     day = dt.date.today()
     while day.weekday() != day_of_week:
         day += dt.timedelta(days=1)
-    message = pretty_pairs(build_pairs(day=day), True)
+    message = pretty_pairs(build_pairs(day=day), True, False, True)
     update.message.reply_text(
         message.format(
             date=i18n["schedule"]["days"]["next"][day_of_week]), parse_mode=ParseMode.HTML, disable_web_page_preview=True)
@@ -189,7 +189,7 @@ def schedule_of(update: Update, context: CallbackContext) -> None:
         try:
             date = dt.datetime.strptime(context.args[0], "%d.%m.%Y").date()
             message = pretty_pairs(build_pairs(
-                date), False, get_week(date))
+                date), False, get_week(date), True)
             update.message.reply_text(
                 message.format(
                     date=date.strftime("%d.%m.%Y")), parse_mode=ParseMode.HTML, disable_web_page_preview=True)
