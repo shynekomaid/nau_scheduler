@@ -1,7 +1,7 @@
 # This script should be running constantly (from the systemd service or from a while loop in a bash script from crontab)
 
 from asyncio import futures
-from core import log2file, prepare_config, prepare_language, send_to_admin, get_week, check_subscriber, add_subscriber, remove_subscriber, get_logs_files, build_pairs, pretty_pairs
+from core import log2file, prepare_config, prepare_language, send_to_admin, get_week, check_subscriber, add_subscriber, remove_subscriber, get_logs_files, build_pairs, pretty_pairs, pretty_hours, get_next_pair, pretty_next_pair, get_prev_pair, pretty_prev_pair
 
 
 import html
@@ -46,6 +46,11 @@ def unsubscribe(update: Update, context: CallbackContext) -> None:
     else:
         update.message.reply_text(
             i18n["system_messages"]["not_subscribed"])
+
+
+def hours(update: Update, context: CallbackContext) -> None:
+    update.message.reply_text(pretty_hours(), parse_mode=ParseMode.HTML)
+    pass
 
 
 def error_handler(update: object, context: CallbackContext) -> None:
@@ -193,6 +198,18 @@ def schedule_of(update: Update, context: CallbackContext) -> None:
         update.message.reply_text(i18n["system_messages"]["no_date"])
 
 
+def next_pair(update: Update, context: CallbackContext) -> None:
+    pair, when = get_next_pair()
+    update.message.reply_text(
+        pretty_next_pair(pair, when), parse_mode=ParseMode.HTML, disable_web_page_preview=True)
+
+
+def prev_pair(update: Update, context: CallbackContext) -> None:
+    pair, when = get_prev_pair()
+    update.message.reply_text(
+        pretty_prev_pair(pair, when), parse_mode=ParseMode.HTML, disable_web_page_preview=True)
+
+
 if __name__ == "__main__":
     log2file("Starting timer script")
     config = prepare_config("config/settings.json")
@@ -225,6 +242,11 @@ if __name__ == "__main__":
         "saturday", get_next_saturday_schedule))
     dispatcher.add_handler(CommandHandler("sunday", get_next_sunday_schedule))
     dispatcher.add_handler(CommandHandler("schedule_of", schedule_of))
+    dispatcher.add_handler(CommandHandler("next", next_pair))
+    dispatcher.add_handler(CommandHandler("prev", prev_pair))
+
     dispatcher.add_handler(CommandHandler("support", support))
+    dispatcher.add_handler(CommandHandler("hours", hours))
+
     updater.start_polling()
     updater.idle()

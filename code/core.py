@@ -1,7 +1,8 @@
 # This file contain core functions of the program
 
-from datetime import date, datetime as dt
+from datetime import date, datetime as dt, timedelta as td
 from json import loads, dumps
+from time import time as time_now
 import requests
 from os import path as os_path, listdir as os_listdir
 
@@ -219,4 +220,113 @@ def pretty_pairs(pairs, its_day_of_week=False, need_print_week=False):
                 pretty = pretty[:-1]
             pretty += "\n\n"
         pretty = pretty[:-1]
+    return pretty
+
+
+def pretty_hours():
+    pretty = f'<b>{i18n["schedule"]["hours"]}</b>\n'
+    pretty += f'<i>{i18n["schedule"]["hours_sub"]}</i>\n\n'
+    for pair in schedule["pairs"]:
+        pretty += f'<b>{pair}.</b>  {schedule["pairs"][pair]["start"]} - {schedule["pairs"][pair]["end"]}\n'
+    return pretty
+
+
+def get_next_pair():
+    day_offset = 0
+    day_find_count = 7
+    while day_find_count:
+        day = date.today() + td(days=day_offset)
+        pairs = build_pairs(day)
+        if pairs:
+            for pair in pairs:
+                h1 = int(pair["start"].split(":")[0])
+                m1 = int(pair["start"].split(":")[1])
+                if (day_find_count == 7):
+                    t = dt.now().time()
+                    h2 = t.hour
+                    m2 = t.minute
+                else:
+                    h2 = 0
+                    m2 = 0
+                M1 = h1*60 + m1
+                M2 = h2*60 + m2
+                if M1 > M2:
+                    return pair, day
+        day_offset += 1
+        day_find_count -= 1
+    return None, None
+
+
+def get_prev_pair():
+    day_offset = 0
+    day_find_count = 7
+    while day_find_count:
+        day = date.today() - td(days=day_offset)
+        pairs = build_pairs(day)
+        if pairs:
+            for pair in pairs[::-1]:
+                h1 = int(pair["end"].split(":")[0])
+                m1 = int(pair["end"].split(":")[1])
+                if (day_find_count == 7):
+                    t = dt.now().time()
+                    h2 = t.hour
+                    m2 = t.minute
+                else:
+                    h2 = 23
+                    m2 = 59
+                M1 = h1*60 + m1
+                M2 = h2*60 + m2
+                if M1 < M2:
+                    return pair, day
+        day_offset += 1
+        day_find_count -= 1
+    return None, None
+
+
+def pretty_next_pair(pair, when):
+    if (not pair or not when):
+        return f'<b>{i18n["schedule"]["empty_next"]}</b>'
+    pretty = f'<b>{pair["start"]} - {pair["end"]}</b>  <i>{i18n["schedule"]["pairs_type"][pair["type"]]}</i>\n'
+    pretty += f'<pre>{pair["subject"]["name"]}</pre>\n'
+    pretty += f'<b>{i18n["schedule"]["room"]}</b> {pair["room"]}\n'
+    if pair["teacher"]:
+        pretty += f'<b>{i18n["schedule"]["teacher"]}</b> <i>{i18n["schedule"]["teacher_degrees"][pair["teacher"]["degree"]]}</i> {pair["teacher"]["name"]}\n'
+    if pair["class_link"]:
+        pretty += f'<a href="{pair["class_link"]}">{i18n["schedule"]["class_link"]}</a> '
+    if pair["meet_link"]:
+        pretty += f'<a href="{pair["meet_link"]}">{i18n["schedule"]["meet_link"]}</a>'
+    if (not (pair["class_link"] or pair["meet_link"])):
+        pretty = pretty[:-1]
+    pretty += f'\n\n<b>{i18n["schedule"]["when"]}</b> {when.strftime("%d.%m.%Y")}'
+    if when == date.today():
+        pretty += f' ({i18n["schedule"]["days"]["today"]})'
+    elif when == date.today() + td(days=1):
+        pretty += f' ({i18n["schedule"]["days"]["tomorrow"]})'
+    else:
+        pretty += f' ({i18n["schedule"]["days"]["next"][int(when.strftime("%w"))]})'
+    return pretty
+
+
+def pretty_prev_pair(pair, when):
+    if (not pair or not when):
+        return f'<b>{i18n["schedule"]["empty_prev"]}</b>'
+    pretty = f'<b>{pair["start"]} - {pair["end"]}</b>  <i>{i18n["schedule"]["pairs_type"][pair["type"]]}</i>\n'
+    pretty += f'<pre>{pair["subject"]["name"]}</pre>\n'
+    pretty += f'<b>{i18n["schedule"]["room"]}</b> {pair["room"]}\n'
+    if pair["teacher"]:
+        pretty += f'<b>{i18n["schedule"]["teacher"]}</b> <i>{i18n["schedule"]["teacher_degrees"][pair["teacher"]["degree"]]}</i> {pair["teacher"]["name"]}\n'
+    if pair["class_link"]:
+        pretty += f'<a href="{pair["class_link"]}">{i18n["schedule"]["class_link"]}</a> '
+    if pair["meet_link"]:
+        pretty += f'<a href="{pair["meet_link"]}">{i18n["schedule"]["meet_link"]}</a>'
+    if (not (pair["class_link"] or pair["meet_link"])):
+        pretty = pretty[:-1]
+    pretty += f'\n\n<b>{i18n["schedule"]["when"]}</b> {when.strftime("%d.%m.%Y")}'
+    print(date.today() - td(days=1))
+    if when == date.today():
+        pretty += f' ({i18n["schedule"]["days"]["today"]})'
+    elif when == date.today() - td(days=1):
+        pretty += f' ({i18n["schedule"]["days"]["yesterday"]})'
+    else:
+        pretty += f' ({i18n["schedule"]["days"]["prev"][int(when.strftime("%w"))]})'
     return pretty
