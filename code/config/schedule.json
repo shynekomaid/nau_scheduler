@@ -39,24 +39,24 @@
               "subject": 1,
               "type": "lecture",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/vtk-siwn-qmx",
+              "class_link": "https://classroom.google.com/c/NTM3OTEzMzE3NTY2"
             },
             "3": {
               "teacher": 2,
               "subject": 2,
               "type": "lecture",
               "room": "3.319",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/mgx-ybqj-aju",
+              "class_link": "https://classroom.google.com/c/MzIwNDc0OTE2Nzgz"
             },
             "4": {
               "teacher": 2,
               "subject": 2,
               "type": "practice",
               "room": "3.319",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/mgx-ybqj-aju",
+              "class_link": "https://classroom.google.com/c/MzIwNDc0OTE2Nzgz"
             }
           }
         },
@@ -67,32 +67,32 @@
               "subject": 1,
               "type": "lecture",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/vtk-siwn-qmx",
+              "class_link": "https://classroom.google.com/c/NTM3OTEzMzE3NTY2"
             },
             "3": {
               "teacher": 3,
               "subject": 3,
               "type": "lecture",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/yye-yqei-bcz",
+              "class_link": "https://classroom.google.com/c/NDg5MDQ0MzY2NzA5"
             },
             "4": {
               "teacher": 3,
               "subject": 3,
               "type": "lecture",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/yye-yqei-bcz",
+              "class_link": "https://classroom.google.com/c/NDg5MDQ0MzY2NzA5"
             },
             "5": {
               "teacher": 4,
               "subject": 4,
               "type": "practice",
               "room": "3.112",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/rzc-xctr-mec",
+              "class_link": "https://classroom.google.com/c/NTUxNzcxNTY0MDQ0"
             }
           }
         },
@@ -103,24 +103,24 @@
               "subject": 5,
               "type": "lecture",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/tua-cqae-rau",
+              "class_link": "https://classroom.google.com/c/NTI4NTc2NjgxMDYw"
             },
             "3": {
               "teacher": 5,
               "subject": 5,
               "type": "lecture",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/tua-cqae-rau",
+              "class_link": "https://classroom.google.com/c/NTI4NTc2NjgxMDYw"
             },
             "4": {
               "teacher": 4,
               "subject": 4,
               "type": "practice",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/rzc-xctr-mec",
+              "class_link": "https://classroom.google.com/c/NTUxNzcxNTY0MDQ0"
             }
           }
         },
@@ -131,32 +131,32 @@
               "subject": 6,
               "type": "lecture",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/erk-twyb-qnt",
+              "class_link": "https://classroom.google.com/c/Mzg0NzczNDg4ODY1"
             },
             "4": {
               "teacher": 2,
               "subject": 6,
               "type": "practice",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/erk-twyb-qnt",
+              "class_link": "https://classroom.google.com/c/Mzg0NzczNDg4ODY1"
             },
             "5": {
               "teacher": 6,
               "subject": 7,
               "type": "lecture",
               "room": "3.330",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/exy-hdoj-chz",
+              "class_link": "https://classroom.google.com/c/NTQ0ODM4Nzc1ODcz"
             },
             "6": {
               "teacher": 6,
               "subject": 7,
               "type": "lecture",
               "room": "3.330",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/exy-hdoj-chz",
+              "class_link": "https://classroom.google.com/c/NTQ0ODM4Nzc1ODcz"
             }
           }
         },
@@ -199,32 +199,32 @@
               "subject": 1,
               "type": "lecture",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/vtk-siwn-qmx",
+              "class_link": "https://classroom.google.com/c/NTM3OTEzMzE3NTY2"
             },
             "3": {
               "teacher": 2,
               "subject": 6,
               "type": "lecture",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/erk-twyb-qnt",
+              "class_link": "https://classroom.google.com/c/Mzg0NzczNDg4ODY1"
             },
             "4": {
               "teacher": 2,
               "subject": 6,
               "type": "practice",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/erk-twyb-qnt",
+              "class_link": "https://classroom.google.com/c/Mzg0NzczNDg4ODY1"
             },
             "5": {
               "teacher": 6,
               "subject": 7,
               "type": "lecture",
               "room": "3.330",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/exy-hdoj-chz",
+              "class_link": "https://classroom.google.com/c/NTQ0ODM4Nzc1ODcz"
             }
           }
         },
@@ -235,24 +235,24 @@
               "subject": 3,
               "type": "lecture",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/yye-yqei-bcz",
+              "class_link": "https://classroom.google.com/c/NDg5MDQ0MzY2NzA5"
             },
             "3": {
               "teacher": 3,
               "subject": 3,
               "type": "lecture",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/yye-yqei-bcz",
+              "class_link": "https://classroom.google.com/c/NDg5MDQ0MzY2NzA5"
             },
             "4": {
               "teacher": 4,
               "subject": 4,
               "type": "practice",
               "room": "3.411",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/rzc-xctr-mec",
+              "class_link": "https://classroom.google.com/c/NTUxNzcxNTY0MDQ0"
             }
           }
         },
@@ -263,24 +263,24 @@
               "subject": 5,
               "type": "lecture",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/tua-cqae-rau",
+              "class_link": "https://classroom.google.com/c/NTI4NTc2NjgxMDYw"
             },
             "3": {
               "teacher": 5,
               "subject": 5,
               "type": "lecture",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/tua-cqae-rau",
+              "class_link": "https://classroom.google.com/c/NTI4NTc2NjgxMDYw"
             },
             "4": {
               "teacher": 4,
               "subject": 4,
               "type": "practice",
               "room": "3.411",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/rzc-xctr-mec",
+              "class_link": "https://classroom.google.com/c/NTUxNzcxNTY0MDQ0"
             }
           }
         },
@@ -300,15 +300,15 @@
               "type": "practice",
               "room": "3.319",
               "meet_link": "https://meet.google.com/mgx-ybqj-aju",
-              "class_link": null
+              "class_link": "https://classroom.google.com/c/MzIwNDc0OTE2Nzgz"
             },
             "6": {
               "teacher": 6,
               "subject": 7,
               "type": "lecture",
               "room": "3.330",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/exy-hdoj-chz",
+              "class_link": "https://classroom.google.com/c/NTQ0ODM4Nzc1ODcz"
             }
           }
         },
@@ -335,8 +335,8 @@
               "subject": 1,
               "type": "lecture",
               "room": "ФК",
-              "meet_link": null,
-              "class_link": null
+              "meet_link": "https://meet.google.com/vtk-siwn-qmx",
+              "class_link": "https://classroom.google.com/c/NTM3OTEzMzE3NTY2"
             },
             "5": {
               "teacher": 7,
@@ -392,7 +392,7 @@
       "name": "Діагностично-лікувальні комплекси"
     },
     "4": {
-      "name": "Філосовські проблеми наукового пізнання"
+      "name": "Філософські проблеми наукового пізнання"
     },
     "5": {
       "name": "Енергозберігаючі технології"
