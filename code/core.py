@@ -191,7 +191,7 @@ def build_pairs(day=date.today()):
     return ret
 
 
-def pretty_pairs(pairs, its_day_of_week=False, need_print_week=False):
+def pretty_pairs(pairs, its_day_of_week=False, need_print_week=False, need_print_day=False):
     pretty = ''
     if not pairs:
         if its_day_of_week:
@@ -205,10 +205,11 @@ def pretty_pairs(pairs, its_day_of_week=False, need_print_week=False):
         if its_day_of_week:
             pretty += f'<b>{i18n["schedule"]["header_variant"]}</b>\n'
         else:
-            pretty += f'<b>{i18n["schedule"]["header"]}</b>\n'
+            if need_print_day:
+                pretty += f'<b>{i18n["schedule"]["header"]}</b>\n'
         if need_print_week:
             pretty += f'<i>{i18n["schedule"]["week"]} {need_print_week}</i>\n'
-        pretty += '\n'
+            pretty += '\n'
         for pair in pairs:
             pretty += f'<b>{pair["start"]} - {pair["end"]}</b>  <i>{i18n["schedule"]["pairs_type"][pair["type"]]}</i>\n'
             pretty += f'<pre>{pair["subject"]["name"]}</pre>\n'

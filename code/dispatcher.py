@@ -10,7 +10,8 @@ import html
 import datetime as dt
 import traceback
 
-from os import path as os_path
+from os import path as os_path, kill as os_kill, getpid as os_getpid
+from sys import exit as sys_exit
 from threading import Thread
 from json import dumps
 from time import sleep
@@ -219,7 +220,7 @@ def now_pair(update: Update, context: CallbackContext) -> None:
 def deadly_signal_handler(signum, frame):
     log2file("Received signal: " + str(signum), "info")
     send_to_admin(i18n["system_messages"]["bot_stopped"])
-    exit(0)
+    os_kill(os_getpid(), signal.SIGKILL)
 
 
 def help_bot(update: Update, context: CallbackContext) -> None:

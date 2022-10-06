@@ -11,9 +11,10 @@
       - [Clone the repository](#clone-the-repository)
       - [Prepare virtual environment](#prepare-virtual-environment)
       - [Create config file](#create-config-file)
-      - [Getting your group chat id](#getting-your-group-chat-id)
+        - [Getting your group chat id](#getting-your-group-chat-id)
       - [Config bot in telegram side](#config-bot-in-telegram-side)
       - [Create systemd service](#create-systemd-service)
+      - [Start and enable systemd service](#start-and-enable-systemd-service)
 
 ## Install guide
 
@@ -96,11 +97,11 @@ pip install -r requirements.txt
 Creating config file from template:
 
 ```bash
-  cp config/default.json config/settings.json
-  nano config/settings.json
+  cp code/config/default.json code/config/settings.json
+  nano code/config/settings.json
 ```
 
-#### Getting your group chat id
+##### Getting your group chat id
 
 1. Turn off any bot pooling for token
 2. Add your bot to your group
@@ -115,3 +116,29 @@ Send `/start` command to your bot from admin account (admin_id in settings.json)
 Don't forget to add your bot to your group chat. If you don't do this, bot can't send messages to your group chat.
 
 #### Create systemd service
+
+Move systemd service file to systemd directory:
+
+Ubuntu 20.04 and higher:
+
+```bash
+sudo cp /opt/nau-scheduler-bot/systemd/ubuntu20.04/* /etc/systemd/system/
+```
+
+Ubuntu 18.04:
+
+```bash
+sudo cp /opt/nau-scheduler-bot/systemd/ubuntu18.04/* /etc/systemd/system/
+```
+
+#### Start and enable systemd service
+
+```bash
+sudo systemctl daemon-reload
+
+sudo systemctl start scheduler_dispatcher.service
+sudo systemctl enable scheduler_dispatcher.service
+
+sudo systemctl start scheduler_timer.timer
+sudo systemctl enable scheduler_timer.timer
+```

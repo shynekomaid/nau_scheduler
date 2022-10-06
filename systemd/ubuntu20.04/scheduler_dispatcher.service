@@ -1,0 +1,12 @@
+[Unit]
+Description=NAU Scheduler Bot
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/nau-scheduler-bot/sched/bin/python3 /opt/nau-scheduler-bot/code/dispatcher.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
