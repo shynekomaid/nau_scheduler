@@ -1,6 +1,5 @@
 # This script should be running constantly (from the systemd service or from a while loop in a bash script from crontab)
 
-from asyncio import futures
 import signal
 
 from core import log2file, prepare_config, prepare_language, send_to_admin, get_week, check_subscriber, add_subscriber, remove_subscriber, get_logs_files, build_pairs, pretty_pairs, pretty_hours, get_next_pair, pretty_next_pair, get_prev_pair, pretty_prev_pair, get_now_pair, pretty_now_pair
