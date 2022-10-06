@@ -11,8 +11,9 @@ if __name__ == "__main__":
     log2file("Starting timer script")
     config = prepare_config("config/settings.json")
     if ("last_send" in config):
-        if (get_unix() - config["last_send"] + 1) < window:
-            log2file("Timer: Has been sent recently")
+        if (get_unix() - config["last_send"] + 1) < window * 60:
+            log2file("Timer: Has been sent recently. Next send in {} minutes".format(
+                window - int((get_unix() - config["last_send"] + 1) / 60)))
             exit()
     else:
         config["last_send"] = 0
@@ -45,7 +46,8 @@ if __name__ == "__main__":
             send_to_subscribers(pretty)
             log2file("Sending notification. Pair at: {}".format(pair["start"]))
         else:
-            log2file("Timer: No pairs in window")
+            log2file("Timer: No pairs in window. Window open after " +
+                     str(M2 - M1) + " minutes and closes after " + str(M2 - M0) + " minutes")
 
     else:
         log2file("No pair today")
