@@ -1,0 +1,12 @@
+{
+  "token": "TOKEN_HERE",
+  "group_id": "GROUP_ID_HERE",
+  "admin_id": "ADMIN_ID_HERE",
+  "subscribers": [
+    "SUBSCRIBER0_ID_HERE",
+    "SUBSCRIBER1_ID_HERE",
+    "SUBSCRIBER2_ID_HERE"
+  ],
+  "support": "@SUPPORT_CONTACT",
+  "language": "ua"
+}

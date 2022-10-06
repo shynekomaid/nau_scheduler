@@ -129,5 +129,4 @@ dmypy.json
 .pyre/
 
 .vscode/sftp.json
-code/config/default.py
-code/config/default.json
+code/config/settings.json

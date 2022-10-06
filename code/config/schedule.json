@@ -42,19 +42,25 @@
               "teacher": 1,
               "subject": 1,
               "type": "lecture",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             },
             "3": {
               "teacher": 2,
               "subject": 2,
               "type": "lecture",
-              "room": "3.319"
+              "room": "3.319",
+              "meet_link": null,
+              "class_link": null
             },
             "4": {
               "teacher": 2,
               "subject": 2,
               "type": "practice",
-              "room": "3.319"
+              "room": "3.319",
+              "meet_link": null,
+              "class_link": null
             }
           }
         },
@@ -64,25 +70,33 @@
               "teacher": 1,
               "subject": 1,
               "type": "lecture",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             },
             "3": {
               "teacher": 3,
               "subject": 3,
               "type": "lecture",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             },
             "4": {
               "teacher": 3,
               "subject": 3,
               "type": "lecture",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             },
             "5": {
               "teacher": 4,
               "subject": 4,
               "type": "practice",
-              "room": "3.112"
+              "room": "3.112",
+              "meet_link": null,
+              "class_link": null
             }
           }
         },
@@ -92,19 +106,25 @@
               "teacher": 5,
               "subject": 5,
               "type": "lecture",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             },
             "3": {
               "teacher": 5,
               "subject": 5,
               "type": "lecture",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             },
             "4": {
               "teacher": 4,
               "subject": 4,
               "type": "practice",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             }
           }
         },
@@ -114,25 +134,33 @@
               "teacher": 2,
               "subject": 6,
               "type": "lecture",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             },
             "4": {
               "teacher": 2,
               "subject": 6,
               "type": "practice",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             },
             "5": {
               "teacher": 6,
               "subject": 7,
               "type": "lecture",
-              "room": "3.330"
+              "room": "3.330",
+              "meet_link": null,
+              "class_link": null
             },
             "6": {
               "teacher": 6,
               "subject": 7,
               "type": "lecture",
-              "room": "3.330"
+              "room": "3.330",
+              "meet_link": null,
+              "class_link": null
             }
           }
         },
@@ -142,19 +170,25 @@
               "teacher": 7,
               "subject": 8,
               "type": "laboratory",
-              "room": "3.319"
+              "room": "3.319",
+              "meet_link": null,
+              "class_link": null
             },
             "3": {
               "teacher": 7,
               "subject": 8,
               "type": "lecture",
-              "room": "3.330"
+              "room": "3.330",
+              "meet_link": null,
+              "class_link": null
             },
             "4": {
               "teacher": 7,
               "subject": 8,
               "type": "laboratory",
-              "room": "3.330"
+              "room": "3.330",
+              "meet_link": null,
+              "class_link": null
             }
           }
         }
@@ -168,25 +202,33 @@
               "teacher": 1,
               "subject": 1,
               "type": "lecture",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             },
             "3": {
               "teacher": 2,
               "subject": 6,
               "type": "lecture",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             },
             "4": {
               "teacher": 2,
               "subject": 6,
               "type": "practice",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             },
             "5": {
               "teacher": 6,
               "subject": 7,
               "type": "lecture",
-              "room": "3.330"
+              "room": "3.330",
+              "meet_link": null,
+              "class_link": null
             }
           }
         },
@@ -196,19 +238,25 @@
               "teacher": 3,
               "subject": 3,
               "type": "lecture",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             },
             "3": {
               "teacher": 3,
               "subject": 3,
               "type": "lecture",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             },
             "4": {
               "teacher": 4,
               "subject": 4,
               "type": "practice",
-              "room": "3.411"
+              "room": "3.411",
+              "meet_link": null,
+              "class_link": null
             }
           }
         },
@@ -218,19 +266,25 @@
               "teacher": 5,
               "subject": 5,
               "type": "lecture",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             },
             "3": {
               "teacher": 5,
               "subject": 5,
               "type": "lecture",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             },
             "4": {
               "teacher": 4,
               "subject": 4,
               "type": "practice",
-              "room": "3.411"
+              "room": "3.411",
+              "meet_link": null,
+              "class_link": null
             }
           }
         },
@@ -240,19 +294,25 @@
               "teacher": 2,
               "subject": 2,
               "type": "lecture",
-              "room": "3.319"
+              "room": "3.319",
+              "meet_link": "https://meet.google.com/mgx-ybqj-aju",
+              "class_link": "https://classroom.google.com/c/MzIwNDc0OTE2Nzgz"
             },
             "5": {
               "teacher": 2,
               "subject": 2,
               "type": "practice",
-              "room": "3.319"
+              "room": "3.319",
+              "meet_link": "https://meet.google.com/mgx-ybqj-aju",
+              "class_link": null
             },
             "6": {
               "teacher": 6,
               "subject": 7,
               "type": "lecture",
-              "room": "3.330"
+              "room": "3.330",
+              "meet_link": null,
+              "class_link": null
             }
           }
         },
@@ -262,25 +322,33 @@
               "teacher": 7,
               "subject": 8,
               "type": "laboratory",
-              "room": "3.319"
+              "room": "3.319",
+              "meet_link": null,
+              "class_link": null
             },
             "3": {
               "teacher": 7,
               "subject": 8,
               "type": "lecture",
-              "room": "3.330"
+              "room": "3.330",
+              "meet_link": null,
+              "class_link": null
             },
-             "4": {
+            "4": {
               "teacher": 1,
               "subject": 1,
               "type": "lecture",
-              "room": "ФК"
+              "room": "ФК",
+              "meet_link": null,
+              "class_link": null
             },
-             "5": {
+            "5": {
               "teacher": 7,
               "subject": 8,
               "type": "laboratory",
-              "room": "3.330"
+              "room": "3.330",
+              "meet_link": null,
+              "class_link": null
             }
           }
         }
@@ -289,31 +357,31 @@
   },
   "teachers": {
     "1": {
-      "name": "Мірошниченко С.І.",
+      "name": "Мірошниченко С. І.",
       "degree": "professor"
     },
     "2": {
-      "name": "Мельник О.С.",
+      "name": "Мельник О. С.",
       "degree": "docent"
     },
     "3": {
-      "name": "Мірошниченко О.С.",
+      "name": "Мірошниченко О. С.",
       "degree": "docent"
     },
     "4": {
-      "name": "Дротянко Л.Г.",
+      "name": "Дротянко Л. Г.",
       "degree": "head_of_department"
     },
     "5": {
-      "name": "Морозова І.В.",
+      "name": "Морозова І. В.",
       "degree": "professor"
     },
     "6": {
-      "name": "Пантєєв Р.Л.",
+      "name": "Пантєєв Р. Л.",
       "degree": "docent"
     },
     "7": {
-      "name": "Шутко В.М.",
+      "name": "Шутко В. М.",
       "degree": "professor"
     }
   },
