@@ -105,7 +105,7 @@ Creating config file from template:
 
 ##### Getting your group chat id
 
-Reply group chat message to [https://t.me/JsonDumpBot](@JsonDumpBot).
+Reply group chat message to https://t.me/JsonDumpBot.
 
 Otherwise:
 
