@@ -105,11 +105,16 @@ Creating config file from template:
 
 ##### Getting your group chat id
 
+Reply group chat message to [https://t.me/JsonDumpBot](@JsonDumpBot).
+
+Otherwise:
+
 1. Turn off any bot pooling for token
 2. Add your bot to your group
 3. Send any message to bot (ex: /group_id@tmischedule_bot). Replace @tmischedule_bot with your bot username
 4. Open in browser <https://api.telegram.org/botTOKEN/getUpdates>. (Replace TOKEN with your bot token)
 5. Search for `/group_id` and copy chat id
+
 
 #### Config bot in telegram side
 
